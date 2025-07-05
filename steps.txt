@@ -1,0 +1,26 @@
+First step: 
+Install minikube and run k8s cluster on windows via virtualbox
+
+Second step: 
+Then run the following commands: 
+
+###run minikube k8s on virtualbox
+minikube start --driver=virtualbox 
+
+###check if the cluster is running
+kubectl get nodes  
+
+#### for run all YAML file in the project folder
+kubectl apply f . 
+
+
+####Check that everthing works great
+kubectl get pods
+kubectl get services
+
+####Create tunnel for get to local ports
+minikube tunnel
+
+####PortForward method to create access to kibana
+kubectl port-forward service/kibana 5601:5601
+
